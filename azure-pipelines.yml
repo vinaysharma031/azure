@@ -6,14 +6,17 @@
 trigger:
 - master
 
+pool: 
+  vmImage: 'ubuntu-latest'
+
 stages:
 
   - stage: deploy
     jobs:
       - job: deploying
         displayName: deploying to webserver
-        pool:
-          vmImage: 'ubuntu-latest'
+   #     pool:
+    #      vmImage: 'ubuntu-latest'
         steps:
           - bash: |
               pwd
@@ -26,8 +29,8 @@ stages:
     jobs:
       - job: Report
         displayName: Generating Report
-        pool:
-          vmImage: 'ubuntu-latest'
+     #   pool:
+      #    vmImage: 'ubuntu-latest'
         steps:
           - bash : |
               sudo apt-get install openjdk-8-jdk
@@ -39,8 +42,8 @@ stages:
     jobs:
       - job : Notifying
         displayName: Sending notification
-        pool:
-          vmImage: 'ubuntu-latest'
+       # pool:
+        #  vmImage: 'ubuntu-latest'
         steps:
           - bash: |
               sudo apt install mailutils
