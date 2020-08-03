@@ -8,7 +8,7 @@ trigger:
 stages:
   - stage: deploy
     jobs:
-      - job: deploying to web-server
+      - job: deploying
         displayName: deploying to webserver
         pool:
           vmImage:'ubuntu-latest'
