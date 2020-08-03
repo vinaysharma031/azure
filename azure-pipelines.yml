@@ -43,14 +43,14 @@ stages:
               echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
               sudo mailq
 
- # - stage: Deploy
+  - stage: Deploy
 
-  #  jobs:
-   #   - job: Deploying_Artifacts
-    #    displayName: Copying data to servers
-     #   steps:
+    jobs:
+      - job: Deploying_Artifacts
+        displayName: Copying data to servers
+        steps:
           - bash: |
-              sudo sshpass -p "vinay@123" rsync -rvz -e 'ssh -o StrictHostKeyChecking=no -p 22' --progress /home/vsts/work/1/s/allure-results/hello.txt root@13.233.108.180:/azure
+              sudo sshpass -p "vinay@123" rsync -rvz -e 'ssh -o StrictHostKeyChecking=no -p 22' --progress /home/vsts/work/1/s/hello.txt root@13.233.108.180:/azure
               sudo sshpass -p 'vinay@123' ssh -o StrictHostKeyChecking=no root@13.233.108.180 "cd /home/vinay && ansible-playbook tomcat.yml"
 
 
