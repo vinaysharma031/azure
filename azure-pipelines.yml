@@ -14,7 +14,9 @@ stages:
           vmImage: 'ubuntu-latest'
         steps:
           - bash: |
-              echo: "publishing to working directory"
+              pwd
+              ls
+              
           - publish: $(System.DefaultWorkingDirectory)
           
               
