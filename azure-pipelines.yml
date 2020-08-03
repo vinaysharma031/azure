@@ -44,7 +44,7 @@ stages:
               sudo mailq
               
           - bash: |
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"Bulid Completed"}' https://hooks.slack.com/services/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
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"build complete"}' https://hooks.slack.com/services/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
 
   - stage: Deploy
 
