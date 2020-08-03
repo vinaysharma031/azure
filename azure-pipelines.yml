@@ -21,8 +21,6 @@ stages:
           - bash: |
               pwd
               ls
-              
-          - publish: $(System.DefaultWorkingDirectory)
  
   - stage: Report_Generation
 
@@ -39,8 +37,6 @@ stages:
               sudo npm install -g n
               sudo npm install -g allure-commandline
               allure generate $(System.DefaultWorkingDirectory)/allure-results --clean -o $(System.DefaultWorkingDirectory)/allure-results
-          - publish: $(System.DefaultWorkingDirectory)
-            artifact: report
 
   - stage: Notification
     jobs:
@@ -53,7 +49,8 @@ stages:
               sudo apt install mailutils
               sudo systemctl restart postfix
               sudo systemctl status postfix
-              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinaysharma031@gmail.com
-              
+              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinaysharma2591@gmail.com -A -A $(System.DefaultWorkingDirectory)/allure-results/index.html
+          - publish: $(System.DefaultWorkingDirectory)
+            artifact: report    
               
 
