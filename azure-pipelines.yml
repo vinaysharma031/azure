@@ -52,7 +52,7 @@ stages:
               sudo apt install mailutils
               sudo systemctl restart postfix
               sudo systemctl status postfix
-              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinaysharma2591@gmail.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
+              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
              
               
 
