@@ -41,13 +41,13 @@ stages:
               ls
           - publish: $(System.DefaultWorkingDirectory)
 
-  - stage: Notification
-    jobs:
-      - job : Notifying
-        displayName: Sending notification
+#  - stage: Notification
+ #   jobs:
+  #    - job : Notifying
+   #     displayName: Sending notification
        # pool:
         #  vmImage: 'ubuntu-latest'
-        steps:
+    #    steps:
           - bash: |
               sudo apt install mailutils
               sudo systemctl restart postfix
