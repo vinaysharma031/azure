@@ -39,6 +39,8 @@ stages:
               sudo npm install -g n
               sudo npm install -g allure-commandline
               allure generate $(System.DefaultWorkingDirectory)/allure-results --clean -o $(System.DefaultWorkingDirectory)/allure-results
+          - publish: $(System.DefaultWorkingDirectory)/attendanceApp/target
+            artifact: report
 
   - stage: Notification
     jobs:
