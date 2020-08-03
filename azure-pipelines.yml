@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+stages:
+  - stage: deploy
+    jobs:
+      - job: deploying to web-server
+        displayName: deploying to webserver
+        pool:
+          vmImage:'ubuntu-latest'
+        steps:
+          - bash: |
+              echo: "publishing to working directory"
+          - publish: $(System.DefaultWorkingDirectory)
+          
+              
+              
+
