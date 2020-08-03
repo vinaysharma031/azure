@@ -37,6 +37,7 @@ stages:
               sudo npm install -g n
               sudo npm install -g allure-commandline
               allure generate $(System.DefaultWorkingDirectory)/allure-results --clean -o $(System.DefaultWorkingDirectory)/allure-results
+          - publish: $(System.DefaultWorkingDirectory)
 
   - stage: Notification
     jobs:
@@ -50,7 +51,6 @@ stages:
               sudo systemctl restart postfix
               sudo systemctl status postfix
               echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinaysharma2591@gmail.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
-          - publish: $(System.DefaultWorkingDirectory)
-            artifact: report    
+             
               
 
