@@ -18,7 +18,18 @@ stages:
               ls
               
           - publish: $(System.DefaultWorkingDirectory)
-          
+  - stage: Notification
+    jobs:
+      - job : Notifying
+        displayName: Sending notification
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - bash: |
+              sudo apt install mailutils
+              sudo systemctl restart postfix
+              sudo systemctl status postfix
+              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinaysharma031@gmail.com
               
               
 
