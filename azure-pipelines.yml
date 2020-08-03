@@ -11,12 +11,10 @@ pool:
 
 stages:
 
-  - stage: deploy
+  - stage: Build
     jobs:
-      - job: deploying
-        displayName: deploying to webserver
-   #     pool:
-    #      vmImage: 'ubuntu-latest'
+      - job: Build
+        displayName: Installing dependencies
         steps:
           - bash: |
               pwd
@@ -27,8 +25,6 @@ stages:
     jobs:
       - job: Report
         displayName: Generating Report
-     #   pool:
-      #    vmImage: 'ubuntu-latest'
         steps:
           - bash : |
               sudo apt-get install default-jre
@@ -37,22 +33,25 @@ stages:
               sudo npm install -g n
               sudo npm install -g allure-commandline
               allure generate $(System.DefaultWorkingDirectory)/allure-results --clean -o $(System.DefaultWorkingDirectory)/allure-results
-              pwd
-              ls
+      
           - publish: $(System.DefaultWorkingDirectory)
 
-#  - stage: Notification
- #   jobs:
-  #    - job : Notifying
-   #     displayName: Sending notification
-       # pool:
-        #  vmImage: 'ubuntu-latest'
-    #    steps:
           - bash: |
               sudo apt install mailutils
               sudo systemctl restart postfix
               sudo systemctl status postfix
               echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
               sudo mailq
+
+  - stage: Deploy
+
+    jobs:
+      - job: Deploying_Artifacts
+        displayName: Copying data to servers
+        steps:
+          - bash:
+              
+
+
               
 
