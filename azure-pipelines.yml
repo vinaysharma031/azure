@@ -53,6 +53,6 @@ stages:
               sudo systemctl restart postfix
               sudo systemctl status postfix
               echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
-             
+              sudo mailq
               
 
