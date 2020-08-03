@@ -40,8 +40,10 @@ stages:
               sudo apt install mailutils
               sudo systemctl restart postfix
               sudo systemctl status postfix
-              echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
+              sudo echo "Find the ci/cd report in attachment" | mail -s "Pipeline Notification" vinkumar@qasource.com -A $(System.DefaultWorkingDirectory)/allure-results/index.html
               sudo mailq
+              
+          - bash: |
               curl -X POST -H 'Content-type: application/json' --data '{"text":"Bulid Completed"}' https://hooks.slack.com/services/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
 
   - stage: Deploy
