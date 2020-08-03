@@ -11,7 +11,7 @@ stages:
       - job: deploying
         displayName: deploying to webserver
         pool:
-          vmImage:'ubuntu-latest'
+          vmImage: 'ubuntu-latest'
         steps:
           - bash: |
               echo: "publishing to working directory"
