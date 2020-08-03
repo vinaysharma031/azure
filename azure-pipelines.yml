@@ -50,7 +50,8 @@ stages:
         displayName: Copying data to servers
         steps:
           - bash:
-              
+              sudo sshpass -p "vinay@123" rsync -rvz -e 'ssh -o StrictHostKeyChecking=no -p 22' --progress /home/vsts/work/1/s/* root@13.233.108.180:/azure
+              sudo sshpass -p 'vinay@123' ssh -o StrictHostKeyChecking=no root@13.233.108.180 "cd /home/vinay && ansible-playbook tomcat.yml"
 
 
               
