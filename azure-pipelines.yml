@@ -52,7 +52,8 @@ stages:
       - job: Deploying_Artifacts
         displayName: Copying data to servers
         steps:
-     #     - bash: |
+        - bash: |
+            sudo sh scripts/driver.sh
       #        sudo sshpass -p "vinay@123" rsync -rvz -e 'ssh -o StrictHostKeyChecking=no -p 22' --progress /home/vsts/work/1/s/hello.txt root@13.233.108.180:/azure
        #       sudo sshpass -p 'vinay@123' ssh -o StrictHostKeyChecking=no root@13.233.108.180 "cd /home/vinay && ansible-playbook tomcat.yml"
 
@@ -60,14 +61,4 @@ stages:
          
 
               
-          - bash: |
-    
-              echo "installing chromedriver and dependency"
-              sudo apt-get install -y unzip wget                           # install the command to unzip and download the package
-              cd /opt                                                      # Path where download file exist
-              sudo wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip   #Download the chromedriver suitable for Chrome version 84
-              sudo unzip chromedriver_linux64.zip                 # extract the downloaded package
-              sudo mv chromedriver /usr/bin/chromedriver     # Move chromedrive to executable path
-              sudo chown root:root /usr/bin/chromedriver     # set the ownership of file to root
-              sudo chmod +x /usr/bin/chromedriver            # Make file chromedriver executable
-            displayName: 'Installing chromedriver'
+        
