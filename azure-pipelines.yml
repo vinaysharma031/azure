@@ -65,7 +65,7 @@ stages:
               echo "installing chromedriver and dependency"
               sudo apt-get install -y unzip wget                           # install the command to unzip and download the package
               cd /opt                                                      # Path where download file exist
-              Wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip   #Download the chromedriver suitable for Chrome version 84
+              wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip   #Download the chromedriver suitable for Chrome version 84
               unzip chromedriver_linux64.zip                 # extract the downloaded package
               sudo mv chromedriver /usr/bin/chromedriver     # Move chromedrive to executable path
               sudo chown root:root /usr/bin/chromedriver     # set the ownership of file to root
