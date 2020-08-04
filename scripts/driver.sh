@@ -11,7 +11,7 @@ rm -rf /opt/LATEST_RELEASE_*
 wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$VERSION
 DRIVER_VERSION=$(cat /opt/LATEST_RELEASE_*)
 echo $DRIVER_VERSION                                              
-https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip 
+wget https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip 
 unzip chromedriver_linux64.zip                 
 mv chromedriver /usr/bin/chromedriver     
 chown root:root /usr/bin/chromedriver     
