@@ -1,34 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@vinaysharma031 
-vinaysharma031
-/
-azure
-0
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-azure/azure-pipelines.yml
-@vinaysharma031
-vinaysharma031 Update azure-pipelines.yml for Azure Pipelines
-Latest commit b64c459 3 hours ago
- History
- 1 contributor
-64 lines (47 sloc)  2.01 KB
-  
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
