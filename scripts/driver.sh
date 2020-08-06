@@ -3,6 +3,7 @@
 #Installing chromedriver for currently installed chrome version
 apt-get install -y google-chrome-stable
 
+
 #check the install version of chrome and put first three values in a file ver.txt 
 #using this first three value we will get to know to suitable version of chromedriver for the existing chrome version
 
@@ -32,19 +33,19 @@ echo $DRIVER_VERSION
 wget https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip 
 
 #Extract the downloaded zip file
-unzip chromedriver_linux64.zip                 
+unzip chromedriver_linux64.zip    
+
+#Make the root ownership of the chromedriver
+chown root:root /opt/chromedriver             
 
 #Move this file to already added executable path
 mv chromedriver /usr/bin/chromedriver     
 
-#Make the root ownership of the chromedriver
-chown root:root /usr/bin/chromedriver     
-
 #Make the chromedriver executable
 chmod +x /usr/bin/chromedriver  
 
-#Path for chrome drive
-LINUX_CHROME="/usr/bin/chromedriver"
-echo $LINUX_CHROME
 
+#Export path of executable chromedriver
 export LINUX_CHROME=/usr/bin/chromedriver
+
+echo $LINUX_CHROME 
