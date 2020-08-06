@@ -32,11 +32,17 @@ echo $DRIVER_VERSION
 #Now download the exact chromedriver using the chromedriver version
 wget https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip 
 
+ls
+
 #Extract the downloaded zip file
 unzip chromedriver_linux64.zip    
 
+ls
+
 #Make the root ownership of the chromedriver
 chown root:root /opt/chromedriver             
+
+ls
 
 #Move this file to already added executable path
 mv chromedriver /usr/bin/chromedriver     
@@ -44,8 +50,4 @@ mv chromedriver /usr/bin/chromedriver
 #Make the chromedriver executable
 chmod +x /usr/bin/chromedriver  
 
-
-#Export path of executable chromedriver
-export LINUX_CHROME=/usr/bin/chromedriver
-
-echo $LINUX_CHROME 
+ls /usr/bin/chromedriver 
