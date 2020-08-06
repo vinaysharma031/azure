@@ -53,9 +53,9 @@ stages:
         displayName: Copying data to servers
         steps:
         - bash: |
-            chmod +x /driver.sh
-            source scripts/driver.sh
+            chmod +x scripts/driver.sh
             sudo sh scripts/driver.sh
+            export LINUX_CHROME=/usr/bin/chromedriver
             echo $LINUX_CHROME
 
       #        sudo sshpass -p "vinay@123" rsync -rvz -e 'ssh -o StrictHostKeyChecking=no -p 22' --progress /home/vsts/work/1/s/hello.txt root@13.233.108.180:/azure
