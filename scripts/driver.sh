@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Installing chromedriver for currently installed chrome version
-
+apt-get install -y google-chrome-stable
 
 #check the install version of chrome and put first three values in a file ver.txt 
 #using this first three value we will get to know to suitable version of chromedriver for the existing chrome version
@@ -46,3 +46,5 @@ chmod +x /usr/bin/chromedriver
 #Path for chrome drive
 LINUX_CHROME="/usr/bin/chromedriver"
 echo $LINUX_CHROME
+
+export LINUX_CHROME=/usr/bin/chromedriver
