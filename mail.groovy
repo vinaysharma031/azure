@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy 
-
 def exampleMethod() {
 
 mail body: "Please visit ${env.BUILD_URL} for further information.",
