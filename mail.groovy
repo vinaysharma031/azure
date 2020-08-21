@@ -7,6 +7,6 @@ to: 'vinkumar@qasource.com'
 
 }
 
-return return [
+return [
     email: this.&email
 ]
