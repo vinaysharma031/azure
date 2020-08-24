@@ -12,6 +12,8 @@ install:
 # command to run tests
 script:
   - echo HELLO_WORLD
+  - pwd
+  - ls
   
   
   
