@@ -8,7 +8,6 @@ before_install:
 - sudo apt-get update -y
 
 install:
-  - pip install -r requirements.txt
   - apt-get wget 
 # command to run tests
 script:
