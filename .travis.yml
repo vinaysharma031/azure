@@ -17,6 +17,7 @@ script:
   - echo HELLO_WORLD
   - pwd
   - ls
+  - sudo service postgresql status
   
   
   
