@@ -19,9 +19,8 @@ script:
   - ls
   - sudo service postgresql status
   - sudo mkdir test
-  - git clone git@github.com:vinaysharma031/test.git test
-  - cd test
-  - ls  
+  - git clone git@github.com:vinaysharma031/test.git
+  - ls 
   
   
   
