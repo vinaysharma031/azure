@@ -15,7 +15,3 @@ to: 'vinkumar@qasource.com'
 
 }
 
-return [
-    email: this.&email
-    emailone: this.&emailone
-]
