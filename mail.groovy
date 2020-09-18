@@ -6,10 +6,6 @@ subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) success.",
 to: 'vinkumar@qasource.com'
 
 }
-return [
-    email: this.&email
-]
-
 def emailone() {
 
 mail body: "Please visit ${env.BUILD_URL} for further information.",
@@ -18,5 +14,6 @@ to: 'vinkumar@qasource.com'
 
 }
 return [
+    email: this.&email,
     emailone: this.&emailone
 ]
