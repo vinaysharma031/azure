@@ -7,6 +7,15 @@ to: 'vinkumar@qasource.com'
 
 }
 
+def emailone() {
+
+mail body: "Please visit ${env.BUILD_URL} for further information.",
+subject: "TESTING",
+to: 'vinkumar@qasource.com'
+
+}
+
 return [
     email: this.&email
+    emailone: this.&emailone
 ]
