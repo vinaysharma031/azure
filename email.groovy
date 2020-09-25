@@ -113,18 +113,18 @@ subject: "Job ${env.JOB_NAME}   : FAILED  :  Build Deployed to Production"
 
 return [
     email: this.&email
-	deployment: this.&deployment
-	deploymentFailure: this.&deploymentFailure
-	APITESTPASS: this.&APITESTPASS
-	MVNTESTFAIL: this.&MVNTESTFAIL
-	UITESTFAIL: this.&UITESTFAIL
-	UIFAILREPORT: this.&UIFAILREPORT
-	UIPASSREPORT: this.&UIPASSREPORT
-	UIMVNFAIL: this.&UIMVNFAIL
-	ARTIFTRY: this.&ARTIFTRY
-	FAIlARTIFTRY: this.&FAIlARTIFTRY
-	PRODEPLOY: this.&PRODEPLOY
-	PRODEPLOYFAIL: this.&PRODEPLOYFAIL
+    deployment: this.&deployment
+    deploymentFailure: this.&deploymentFailure
+    APITESTPASS: this.&APITESTPASS
+    MVNTESTFAIL: this.&MVNTESTFAIL
+    UITESTFAIL: this.&UITESTFAIL
+    UIFAILREPORT: this.&UIFAILREPORT
+    UIPASSREPORT: this.&UIPASSREPORT
+    UIMVNFAIL: this.&UIMVNFAIL
+    ARTIFTRY: this.&ARTIFTRY
+    FAIlARTIFTRY: this.&FAIlARTIFTRY
+    PRODEPLOY: this.&PRODEPLOY
+    PRODEPLOYFAIL: this.&PRODEPLOYFAIL
 ]
 
 	
